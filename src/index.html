@@ -10,25 +10,49 @@
     <header>
       <div class="container">
         <div class="index">
-          <div class="logo">CDB</div>
-          <form class="search">
-            <button type="submit">
+          <div class="logo" aria-label="Personal Logo">CDB</div>
+          <form class="search" aria-label="Search Form">
+            <button type="submit" aria-label="Submit Search">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <input type="text" class="searchbar" />
+            <input type="text" class="searchbar" placeholder="Search..." aria-label="Search"/>
           </form>
         </div>
-        <nav>
-          <button>Home</button>
-          <button>Menu</button>
-          <button>About</button>
+        <nav aria-label="Main Navigation">
+          <button aria-label="Home">Home</button>
+          <button aria-label="Menu">Menu</button>
+          <button aria-label="About">About</button>
         </nav>
       </div>
     </header>
     <div id="content">
-      <div class="window">h1</div>
-      <div class="story"></div>
-      <div class="card"></div>
+      <section class="window">
+        <div class="window-image"></div>
+        <div class="window-title">
+          <h1>Carson's Pantry</h1>
+        </div>
+      </section>
+      <section class="story">
+        <div class="story-container">
+          <h1 class="story-title">Carson's Story</h1>
+          <div class="story-content">
+            Carson's culinary journey began in Atlanta, where the city's vibrant
+            food scene ignited his passion for exploration. Inspired by the
+            eclectic mix of restaurants, diners, and pop-ups, Carson set forth
+            on a quest to uncover new flavors and sensations. This adventureous
+            spirit propelled him to the forefront of global culinary innovation.
+            Despite his international reach, many of Carson's dishes are rooted
+            in the memories of family meals at beloved eateries in his hometown.
+          </div>
+        </div>
+      </section>
+      <section class="influences">
+        <h1>Culinary Influences</h1>
+        <div class="card">
+          <div class="left-container"></div>
+          <div class="right-container"></div>
+        </div>
+      </div>
     </div>
     <script
       src="https://kit.fontawesome.com/84feef4628.js"

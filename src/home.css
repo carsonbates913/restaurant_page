@@ -22,6 +22,7 @@ body {
 header {
   position: sticky;
   top: 0;
+  z-index: 100;
   background-color: rgb(var(--color-three));
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .15);
 }
@@ -29,14 +30,13 @@ header {
 .container {
   padding: 0 50px;
   display: flex;
-  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .index {
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
   gap: 20px;
   flex: 1;
@@ -44,9 +44,6 @@ header {
 
 .logo {
   padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   font-family: megascope-variable, sans-serif;
   font-weight: 500;
   font-variation-settings: "SCOP" 20;
@@ -55,22 +52,21 @@ header {
 
 .search {
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
   flex: 1;
+  max-width: 500px;
 }
 
 .searchbar {
   flex: 1;
-  max-width: 500px;
-  min-width: 20px;
   height: 30px;
   border-radius: 10px;
-  border: .5px solid black;
+  border: 0.5px solid black;
   outline: none;
-  padding-left: 10px;
+  padding: 0 10px;
   font-family: baskerville, sans-serif;
-  font-size:15px;
+  font-size: 15px;
+  transition: border 0.2s;
 }
 
 .searchbar:focus {
@@ -79,7 +75,6 @@ header {
 
 nav {
   display: flex;
-  flex-flow: row nowrap;
   gap: 30px;
 }
 
@@ -92,9 +87,72 @@ button {
   font-family: brevia, sans-serif;
   font-weight: 600;
   font-size: 17px;
-  transition: .2s;
+  cursor: pointer;
+  transition: border-bottom 0.2s;
 }
 
 button:hover {
   border-bottom: 4px solid rgb(var(--color-one));
+}
+
+/*Window*/
+.window {
+  position: relative;
+  height: 700px;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-image {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  filter: blur(0px);
+}
+
+.window-title {
+  font-family: active, sans-serif;
+  font-size: 70px;
+  color: white;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*Story*/
+
+.story {
+  height: 400px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.story-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-title {
+  margin: 20px 0px;
+  font-family: brevia, sans-serif;
+  font-size: 40px;
+
+}
+
+.story-content {
+  text-align: center;
+  max-width: 500px;
+  font-family: baskerville, sans-serif;
+  font-size: 17px;
 }
