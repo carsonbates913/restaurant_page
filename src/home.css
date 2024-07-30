@@ -1,0 +1,71 @@
+:root {
+  --color-one: 15, 163, 177;
+  --color-two: 181, 226, 250;
+  --color-three: 249, 247, 243;
+  --color-four: 237, 222, 164;
+  --color-five: 247, 160, 114;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 2000px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgb(var(--color-three));
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .15);
+}
+
+.container {
+  padding: 0 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 30px;
+}
+
+button {
+  height: 80px;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: transparent;
+  padding: .5em 1em;
+  border: none;
+  font-family: brevia, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.index {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  height: 30px;
+  padding-top: 10px;
+  font-family: megascope-variable, sans-serif;
+  font-weight: 500;
+  font-variation-settings: "SCOP" 20;
+  font-size: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input[type="text"] {
+  
+}
