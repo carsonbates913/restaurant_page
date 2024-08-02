@@ -51,9 +51,57 @@ function createInfluences() {
   const title = document.createElement('h1');
   title.className = 'influences-title';
 
-  function createCard() {
+  content.appendChild(section);
+  section.appendChild(title);
+
+  const title1 = "Gios Chicken Amalfitano"
+  const dish1 = "Chicken Parm"
+  const description1 = "From the moment Carson first savored Gio's Chicken Parm, he has been a devoted patron, returning to the restaurant more times than he can count. The golden, crispy chicken, paired with the creamy, buttery pasta, creates a sublime dining experience that keeps him coming back for more."
+
+  createCard(true, title1, dish1, description1);
+
+  function createCard(leftSide, title, dish, description) {
     const card = document.createElement('div');
     card.className = 'card';
+
+    const contentContainer = document.createElement('div');
+    contentContainer.className = 'content-container';
+
+    const influenceContent = document.createElement('div');
+    influenceContent.className = 'influence-content';
+
+    const influenceTitle = document.createElement('h1');
+    influenceTitle.className = 'influence-title';
+
+    const influenceDish = document.createElement('h2');
+    influenceDish.className = 'influenece-dish';
+
+    const influenceDescription = document.createElement('p');
+    influenceDescription.className = 'influence-description';
+
+    const influenceButton = document.createElement('button');
+    influenceButton.className = 'influence-version';
+
+    influenceContent.appendChild(influenceTitle);
+    influenceContent.appendChild(influenceDish);
+    influenceContent.appendChild(influenceDescription);
+    influenceContent.appendChild(influenceButton);
+
+    contentContainer.appendChild(influenceContent);
+
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'image-container';
+
+    if(leftSide) {
+      card.appendChild(contentContainer);
+      card.appendChild(imageContainer);
+    }else{
+      card.appendChild(imageContainer);
+      card.appendChild(contentContainer);
+    }
+
+    section.appendChild(card);
+
   }
 }
 
@@ -61,7 +109,7 @@ createWindow();
 
 createStory();
 
-
+createInfluences();
 
 
 
