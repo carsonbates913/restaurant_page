@@ -1,43 +1,43 @@
 import ('./home.css');
+import CARSON_PANTRY_PATH from './RestaurantFront.jpeg';
+import GIO_CHICKEN_PATH from "./Gio's.jpg";
+import LITTLE_REY_PATH from "./LittleRey.jpg";
+import CHOP_SHOP_PATH from './ChopShop.jpg';
+import CRUMBL_PATH from "./Crumbl.jpeg";
 
 const content = document.querySelector('#content');
 
 function createWindow () {
-  const section = document.createElement('section');
-  section.className = 'window';
+  const section = createElementWithClass('section', 'window');
+  const windowImage = createElementWithClass('div','window-image');
 
-  const windowImage = document.createElement('div');
-  windowImage.className = 'window-image';
+  const carsonPantry = new Image();
+  carsonPantry.src = CARSON_PANTRY_PATH;
 
-  const windowTitle = document.createElement('div');
-  windowTitle.className = 'window-title';
+  const windowTitle = createElementWithClass('div', 'window-title');
 
   const title = document.createElement('h1');
   title.textContent = "Carson's Pantry";
 
+  windowImage.appendChild(carsonPantry);
   windowTitle.appendChild(title);
-
-  section.appendChild(windowImage);
-  section.appendChild(windowTitle);
-
+  section.append(windowImage, windowTitle);
   content.appendChild(section);
 }
 
 function createStory () {
-  const section = document.createElement('section');
-  section.className = 'story';
+  const section = createElementWithClass('section', 'story');
 
-  const storyContainer = document.createElement('div');
-  storyContainer.className = 'story-container';
+  const storyContainer = createElementWithClass('div', 'story-container');
 
-  const storyTitle = document.createElement('h1');
-  storyTitle.className = 'story-title';
+  const storyTitle = createElementWithClass('h1', 'story-title');
+  storyTitle.textContent = "Our Story"
 
-  const storyContent = document.createElement('div');
-  storyContent.className = 'story-content';
+  const storyContent = createElementWithClass('div', 'story-content');
+  storyContent.textContent = "Carson's culinary journey began in Atlanta, where the city's vibrant food scene ignited his passion for exploration. Inspired by the eclectic mix of restaurants, diners, and pop-ups, Carson set forth on a quest to uncover new flavors and sensations. This adventureous spirit propelled him to the forefront of global culinary innovation. Despite his international reach, many of Carson's dishes are rooted in the memories of family meals at beloved eateries in his hometown."
 
-  storyContainer.appendChild(storyContent);
   storyContainer.appendChild(storyTitle);
+  storyContainer.appendChild(storyContent);
 
   section.appendChild(storyContainer);
 
@@ -45,42 +45,60 @@ function createStory () {
 }
 
 function createInfluences() {
-  const section = document.createElement('section');
-  section.className = 'influences';
+  const section = createElementWithClass('section', 'influences');
 
-  const title = document.createElement('h1');
-  title.className = 'influences-title';
+  const title = createElementWithClass('h1', 'influences-title');
+  title.textContent = 'Culinary Influences';
 
   content.appendChild(section);
   section.appendChild(title);
 
-  const title1 = "Gios Chicken Amalfitano"
-  const dish1 = "Chicken Parm"
-  const description1 = "From the moment Carson first savored Gio's Chicken Parm, he has been a devoted patron, returning to the restaurant more times than he can count. The golden, crispy chicken, paired with the creamy, buttery pasta, creates a sublime dining experience that keeps him coming back for more."
 
-  createCard(true, title1, dish1, description1);
+  const cardsData = [
+    {
+      leftSide: false,
+      title: "Gios Chicken Amalfitano",
+      dish: "Chicken Parm",
+      description: "From the moment Carson first savored Gio's Chicken Parm, he has been a devoted patron, returning to the restaurant more times than he can count. The golden, crispy chicken, paired with the creamy, buttery pasta, creates a sublime dining experience that keeps him coming back for more.",
+      imagePath: GIO_CHICKEN_PATH,
+    },
+    {
+      leftSide: true,
+      title: "Little Rey",
+      dish: "Carnitas Tacos",
+      description: "Carson's preference for milder flavors has influenced many of his dishes, as he never developed a taste for spiciness. Nonetheless, his passion for Mexican cuisine remains strong, inspired by his favorite taco spot back home.",
+      imagePath: LITTLE_REY_PATH,
+    },
+    {
+      leftSide: false,
+      title: "Original ChopShop",
+      dish: "Acai Bowl",
+      description: "During his early years, Carson's dedication to fitness led him to prioritize nutrient-rich, high-protein foods. ChopShop's acai bowl became a staple in his diet, perfectly aligning with his fitness goals. The restaurant’s ability to combine nutrition with delicious flavors inspired Carson to explore creating similarly balanced dishes in his own culinary ventures.",
+      imagePath: CHOP_SHOP_PATH,
+    },
+    {
+      leftSide: true,
+      title: "Crumbl Cookies",
+      dish: "Chocolate Chip Cookie",
+      description: "During his early years, Carson's dedication to fitness led him to prioritize nutrient-rich, high-protein foods. ChopShop's acai bowl became a staple in his diet, perfectly aligning with his fitness goals. The restaurant’s ability to combine nutrition with delicious flavors inspired Carson to explore creating similarly balanced dishes in his own culinary ventures.",
+      imagePath: CRUMBL_PATH,
+    }
+  ]
 
-  function createCard(leftSide, title, dish, description) {
-    const card = document.createElement('div');
-    card.className = 'card';
+  cardsData.forEach(card => createCard(card.leftSide, card.title, card.dish, card.description, card.imagePath));
 
-    const contentContainer = document.createElement('div');
-    contentContainer.className = 'content-container';
-
-    const influenceContent = document.createElement('div');
-    influenceContent.className = 'influence-content';
-
-    const influenceTitle = document.createElement('h1');
-    influenceTitle.className = 'influence-title';
-
-    const influenceDish = document.createElement('h2');
-    influenceDish.className = 'influenece-dish';
-
-    const influenceDescription = document.createElement('p');
-    influenceDescription.className = 'influence-description';
-
-    const influenceButton = document.createElement('button');
-    influenceButton.className = 'influence-version';
+  function createCard(leftSide, title, dish, description, image) {
+    const card = createElementWithClass('div', 'card');
+    const contentContainer = createElementWithClass('div', 'content-container');
+    const influenceContent = createElementWithClass('div', 'influence-content');
+    const influenceTitle = createElementWithClass('h1', 'influence-title');
+    influenceTitle.textContent = title;
+    const influenceDish = createElementWithClass('h2', 'influence-dish');
+    influenceDish.textContent = dish;
+    const influenceDescription = createElementWithClass('p', 'influence-description');
+    influenceDescription.textContent = description;
+    const influenceButton = createElementWithClass('button', 'influence-version');
+    influenceButton.textContent = "Carson's Version";
 
     influenceContent.appendChild(influenceTitle);
     influenceContent.appendChild(influenceDish);
@@ -92,13 +110,11 @@ function createInfluences() {
     const imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
 
-    if(leftSide) {
-      card.appendChild(contentContainer);
-      card.appendChild(imageContainer);
-    }else{
-      card.appendChild(imageContainer);
-      card.appendChild(contentContainer);
-    }
+    const restaurantImage = new Image();
+    restaurantImage.src = image;
+    imageContainer.appendChild(restaurantImage);
+
+    leftSide ? card.append(contentContainer, imageContainer) : card.append(imageContainer, contentContainer);
 
     section.appendChild(card);
 
@@ -112,50 +128,8 @@ createStory();
 createInfluences();
 
 
-
-
-
-/*
-import icon from './RestaurantFront.jpeg';
-
-const Icon = new Image();
-Icon.src = icon;
-
-
-const windowBackground = document.querySelector('.window-image');
-
-windowBackground.appendChild(Icon);
-
-import image1 from "./Gio's.jpg";
-
-const Image1 = new Image();
-Image1.src = image1;
-
-const rest1 = document.querySelector('#rest1');
-rest1.appendChild(Image1);
-
-import image3 from './ChopShop.jpg';
-
-const Image3 = new Image();
-Image3.src = image3;
-
-const rest3 = document.querySelector('#rest3');
-rest3.appendChild(Image3);
-
-import image2 from "./LittleRey.jpg";
-
-const Image2 = new Image();
-Image2.src = image2;
-
-const rest2 = document.querySelector('#rest2');
-rest2.appendChild(Image2);
-
-import image4 from "./Gio's.jpg";
-
-const Image4 = new Image();
-Image4.src = image4;
-
-const rest4 = document.querySelector('#rest4');
-rest4.appendChild(Image4);
-
-*/
+function createElementWithClass(tag, className) {
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+}
