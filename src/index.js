@@ -1,5 +1,7 @@
 import ('./home.css');
 
+const content = document.querySelector('#content');
+
 function createWindow () {
   const section = document.createElement('section');
   section.className = 'window';
@@ -18,10 +20,46 @@ function createWindow () {
   section.appendChild(windowImage);
   section.appendChild(windowTitle);
 
-  document.body.appendChild(section);
-
+  content.appendChild(section);
 }
 
+function createStory () {
+  const section = document.createElement('section');
+  section.className = 'story';
+
+  const storyContainer = document.createElement('div');
+  storyContainer.className = 'story-container';
+
+  const storyTitle = document.createElement('h1');
+  storyTitle.className = 'story-title';
+
+  const storyContent = document.createElement('div');
+  storyContent.className = 'story-content';
+
+  storyContainer.appendChild(storyContent);
+  storyContainer.appendChild(storyTitle);
+
+  section.appendChild(storyContainer);
+
+  content.appendChild(section);
+}
+
+function createInfluences() {
+  const section = document.createElement('section');
+  section.className = 'influences';
+
+  const title = document.createElement('h1');
+  title.className = 'influences-title';
+
+  function createCard() {
+    const card = document.createElement('div');
+    card.className = 'card';
+  }
+}
+
+createWindow();
+
+createStory();
 
 
 
@@ -29,11 +67,7 @@ function createWindow () {
 
 
 
-
-
-
-
-
+/*
 import icon from './RestaurantFront.jpeg';
 
 const Icon = new Image();
@@ -75,3 +109,5 @@ Image4.src = image4;
 
 const rest4 = document.querySelector('#rest4');
 rest4.appendChild(Image4);
+
+*/
