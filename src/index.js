@@ -4,7 +4,6 @@ import { createMenu } from './components/menu.js';
 
 const content = document.querySelector('#content');
 
-createMenu(content);
 createHomePage(content);
 
 function clearPage() {
