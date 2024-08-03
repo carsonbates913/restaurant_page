@@ -1,4 +1,6 @@
 import ('./home.css');
-import { createHomePage } from './homePage.js';
+import { createHomePage } from './components/homePage.js';
 
-createHomePage();
+const content = document.querySelector('#content');
+
+createHomePage(content);

@@ -1,12 +1,11 @@
-import CARSON_PANTRY_PATH from './RestaurantFront.jpeg';
-import GIO_CHICKEN_PATH from "./Gio's.jpg";
-import LITTLE_REY_PATH from "./LittleRey.jpg";
-import CHOP_SHOP_PATH from './ChopShop.jpg';
-import CRUMBL_PATH from "./Crumbl.jpeg";
+import CARSON_PANTRY_PATH from '../images/RestaurantFront.jpeg';
+import GIO_CHICKEN_PATH from "../images/Gio's.jpg";
+import LITTLE_REY_PATH from "../images/LittleRey.jpg";
+import CHOP_SHOP_PATH from '../images/ChopShop.jpg';
+import CRUMBL_PATH from "../images/Crumbl.jpeg";
 
-const content = document.querySelector('#content');
 
-export function createHomePage(content){
+export function createHomePage (content) {
   createWindow(content);
   createStory(content);
   createInfluences(content);
@@ -29,7 +28,7 @@ function createWindow (content) {
   section.append(windowImage, windowTitle);
   content.appendChild(section);
 }
-
+ 
 function createStory (content) {
   const section = createElementWithClass('section', 'story');
 
@@ -125,13 +124,6 @@ function createInfluences(content) {
 
   }
 }
-
-createWindow();
-
-createStory();
-
-createInfluences();
-
 
 function createElementWithClass(tag, className) {
   const element = document.createElement(tag);
