@@ -35,14 +35,14 @@ header {
 }
 
 .index {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 20px;
-  flex: 1;
 }
 
 .logo {
-  padding-top: 10px;
+  padding: 10px 0 0 0;
   font-family: megascope-variable, sans-serif;
   font-weight: 500;
   font-variation-settings: "SCOP" 20;
@@ -50,19 +50,19 @@ header {
 }
 
 .search {
-  display: flex;
-  align-items: center;
   flex: 1;
   max-width: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .searchbar {
-  flex: 1;
   height: 30px;
-  border-radius: 10px;
-  border: 0.5px solid black;
-  outline: none;
+  flex: 1;
   padding: 0 10px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  outline: none;
   font-family: baskerville, sans-serif;
   font-size: 15px;
   transition: border 0.2s;
@@ -79,10 +79,10 @@ nav {
 
 header button {
   height: 80px;
-  color: rgba(0, 0, 0, 0.8);
-  background-color: transparent;
   padding: .5em 1em;
   border: none;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: transparent;
   font-family: brevia, sans-serif;
   font-weight: 600;
   font-size: 17px;
@@ -150,8 +150,8 @@ img {
 }
 
 .story-content {
-  text-align: center;
   max-width: 500px;
+  text-align: center;
   font-family: baskerville, sans-serif;
   font-size: 17px;
 }
@@ -159,10 +159,10 @@ img {
 /*Influences*/
 
 .influences-title {
-  font-family: brevia, sans-serif;
-  font-size: 40px;
   margin: 0 0 100px 0;
   text-align: center;
+  font-family: brevia, sans-serif;
+  font-size: 40px;
 }
 
 /*Card*/
@@ -187,15 +187,15 @@ img {
 }
 
 .influence-content {
+  max-width: 450px;
   display: flex;
   flex-direction: column;
-  max-width: 450px;
 }
 
 .influence-title {
+  margin: 0 0 5px 0;
   font-family: brevia, sans-serif;
   font-size: 35px;
-  margin: 0 0 5px 0;
 }
 
 .influence-dish {
@@ -225,37 +225,36 @@ img {
 
 /*menu*/
 .menu {
+  padding: 100px;
   display: flex;
   background-color: lightblue;
   justify-content: center;
-  padding: 100px;
 }
 
 .menu-container {
   flex: 1;
   max-width: 1200px;
-  background-color: white;
-  border-radius: 20px;
   padding: 40px;
-
+  border-radius: 20px;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .menu h1 {
+  text-align: center;
   font-family: brevia, sans-serif;
   font-style: italic;
   font-weight: 100;
   font-size: 55px;
-  text-align: center;
 }
 
 .menu h2 {
+  text-align: center;
   font-family: baskerville, sans-serif;
   font-weight: 100;
   font-size: 35px;
-  text-align: center;
 }
 
 .menu-grid {
@@ -266,8 +265,8 @@ img {
 }
 
 .item {
-  border-bottom: 2px solid black;
   position: relative;
+  border-bottom: 2px solid black;
 }
 
 .item p {
